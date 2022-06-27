@@ -1,7 +1,8 @@
 import sys
 
-print("**Release Notes v{0}**".format(sys.argv[1]))
+print("**Release Notes v{0}**".format(sys.argv[2]))
 print("**What's New**")
-with open("releasenotes.txt", "r") as f:
+with open(sys.argv[1], "r") as f:
     for line in f:
-        print("- {0}".format(line.strip()))
+        if len(line.strip()) > 0:
+            print("- {0}".format(line.strip()))
